@@ -1,14 +1,16 @@
 <template>
-  <div id="app">
-    
-  </div>
+  <ProductListPage/>
 </template>
 
 <script>
 
+import ProductListPage from './components/ProductListPage.vue'
 
 export default {
   name: 'App',
+   components: {
+     ProductListPage
+  }
  
 }
 </script>
