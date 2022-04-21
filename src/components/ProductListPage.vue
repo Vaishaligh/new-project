@@ -425,7 +425,7 @@
                   >
                     <div class="slide-box">
                        <div class="product-box">
-                      <a class="view-detail" @click="viewDetail(product.url_key)"> View Detail </a>
+                      <router-link class="view-detail" :to="`/productdetailpage/${product.url_key} `"> View Detail </router-link>
                      
                       <img
                         class="card-img-top"
@@ -435,7 +435,7 @@
                       <a class="wishlist"><img src="../assets/wish.png" /></a>
                       </div>
                       <div class="card-body">
-                        <p class="card-title productname"><a @click="viewDetail(product.url_key)">{{ product.name }}</a></p>
+                        <p class="card-title productname">{{ product.name }}</p>
                         <p class="card-text">
                         <s>Rs.{{ product.price }}</s> Rs.{{product.selling_price }}
                         <span style="color: red">{{ product.discount }}%</span>
@@ -462,7 +462,7 @@
                   >
                     <div class="slide-box">
                        <div class="product-box">
-                      <a class="view-detail" @click="viewDetail(product.url_key)"> View Detail </a>
+                      <router-link class="view-detail" :to="`/productdetailpage/${product.url_key} `"> View Detail </router-link>
                     
                       <img
                         class="card-img-top"
@@ -472,7 +472,7 @@
                       <a class="wishlist"><img src="../assets/wish.png" /></a>
                       </div>
                       <div class="card-body">
-                        <p class="card-title productname"><a @click="viewDetail(product.url_key)">{{ product.name }}</a></p>
+                        <p class="card-title productname">{{ product.name }}</p>
 
                         <p class="card-text">
                           <s>Rs.{{ product.price }}</s> Rs.{{
@@ -996,7 +996,7 @@ export default {
     },
   viewDetail() {
 //   this.$router.push('/productdetailpage');
-//   this.$router.push({ path: '/productdetailpage', query: { url_key: key } });
+//   this.$router.push({ path: '/productdetailpage', params: { url_key: key } });
   },
 
     openNav() {

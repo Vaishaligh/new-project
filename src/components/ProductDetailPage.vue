@@ -243,24 +243,14 @@
       <div class="row">
         
         <div class="col-md-8 col-sm-12">
-    <carousel :settings="settings" :items-to-show="2">
-    <slide v-for="productImage in productImages" :key="productImage.id">
-     <div class="carousel__item"> <img class=" card-img-top" :src="productImage.image" alt="" /></div>
-    </slide>
-
-       <template #addons>
-      <Navigation />
-       <Pagination />
-     
-    </template>
-  </carousel>
-          <!-- <div
+   
+          <div
             class="image-box"
             v-for="productImage in productImages"
             :key="productImage.id"
           >
             <img class="card-img-top" :src="productImage.image" alt="" />
-          </div> -->
+          </div>
         </div>
         <div class="col-md-4 col-sm-12">
           <h1 class="page-title">{{ productName }}</h1>
@@ -366,8 +356,8 @@
       <h4 class="font-medium mb-4" style="text-align: center">Similar Products</h4>
 
       <div class="row">
-        <carousel :settings="settings"  items-to-show="4">
-        <slide
+       
+        <div
           class="col-md-3 col-sm-6 col-xs-6 col-6 new-class"
           v-for="productSimilar in productSimilars"
           :key="productSimilar.id"
@@ -398,13 +388,9 @@
               </p>
             </div>
           </div>
-        </slide>
-         <template #addons>
-      <Navigation />
-       <Pagination />
-     
-    </template>
-        </carousel>
+        </div>
+       
+   
       </div>
     </div>
   </div>
@@ -720,19 +706,11 @@
 </template>
 <script>
 import axios from "axios";
-import 'vue3-carousel/dist/carousel.css';
-import { Carousel, Slide, Navigation, Pagination,} from 'vue3-carousel';
-import 'vue3-carousel/dist/carousel.css';
+
+
 export default {
   name: "ProductDetailPage",
-   components: {
-    Carousel,
-    Slide,
-    Navigation,
-    Pagination,
- 
-  
-  },
+   
   
   
   data() {
@@ -740,6 +718,7 @@ export default {
    
   
     return {
+        item_id: "",
        isFilterToggle: true,
       isFooter1: true,
       isFooter2: true,
@@ -758,15 +737,29 @@ export default {
     };
   },
   
-  async mounted() {
-    // console.log(this.$route.query.url_key);
-    // this.getProductDetails(this.$route.query.url_key);
+ mounted() {
+    this.item_id = this.$parent._routerRoot._route.params.item_id
+    this.getProductDetails();
+    
+
   },
   methods: {
-    async getProductDetails(key) {
+    async getProductDetails() {
+     
       let response = await axios.get(
-        `https://pim.wforwoman.com/pim/pimresponse.php/?service=product&store=1&url_key=${key}`
+        "https://pim.wforwoman.com/pim/pimresponse.php/",
+        {
+
+            params: {
+               service: "product",
+               store: 1,
+               url_key: this.item_id,
+              
+             },
+        }
       );
+
+
       console.warn("product detail api data", response.data.result.visible_attributes);
       this.productImages = response.data.result.gallery;
       this.productName = response.data.result.name;
