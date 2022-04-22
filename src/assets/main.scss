@@ -717,7 +717,9 @@ product-list-main .sidebar-main .components {
   opacity: 0;
   transition: all .5s;
 }
+
 .product-box {
+  margin-right: 15px;
   position: relative;
   overflow: hidden;
 }
@@ -919,8 +921,21 @@ product-list-main .sidebar-main .components {
   background: transparent;
   display: flex;
   border-radius: inherit;
-  padding: 10px 25px;
+  padding-left: 40px;
+}
+.breadcrumb li {
+  color: #565656;
+  font-size: 12px;
+  font-family: "Jost, Medium";
 
+}
+  .breadcrumb  li a {
+    color: #565656;
+    font-size: 12px;
+    font-family: "Jost, Medium";
+  }
+.productDetail{
+  padding: 0px 20px;
 }
 .product-detail-container {
  
@@ -938,16 +953,18 @@ product-list-main .sidebar-main .components {
   transition: all .5s;
 }
 .product-detail-container .page-title {
-  margin-top: 0;
-  margin-bottom: 5px;
+  /* padding: 10px 20px; */
+  font-family: 'Jost, Medium';
+  /* margin-top: 0; */
+  margin-bottom: 0px; 
   line-height: 1;
-  font-family: "Neue Helvetica, Roman";
-  padding: 10px 20px 0px 20px;
+  /* font-family: "Neue Helvetica, Roman"; */
+  padding: 10px 0px 0px 20px;
   font-size: 16px;
   color: #262626;
 }
-.product-detail-container ul{
-  padding: 10px 20px
+.product-detail-container ul {
+  padding: 5px 20px;
 }
 
 .product-detail-container ul li{
@@ -955,22 +972,30 @@ product-list-main .sidebar-main .components {
   list-style: none;
   float: left;
 }
-.price{
+.price {
   padding-left: 20px;
- 
+  padding-top: 15px;
+  /* padding: 20px; */
+  /* padding-left: 20px; */
 }
 
 .short{
-  padding-left: 20px;
-  
+ 
+  color: #262626;
+  font-size: 13px;
+  border-bottom: 1px solid rgb(204, 204, 204);
+  padding-bottom: 20px;
+  font-family: 'jost-regular';
 }
+  
+
 .color{
   text-transform: uppercase;
   padding-left: 20px;
 }
 
 .mrp-message {
-  font-size: 11px;
+  font-size: 12px;
   position: relative;
   top: 0;
   padding-bottom: 20px;
@@ -980,11 +1005,12 @@ product-list-main .sidebar-main .components {
   font-size: 20px;
   color: #262626;
 }
-.discount{
+.discount {
+  padding-left: 10px;
+  /* padding-right: 5px; */
+  /* padding: 5px; */
+  font-size: 20px;
   color: red;
-  padding: 5px;
-  font-size: 20px
-  ;
 }
 .product-detail-container .size-container {
   margin-bottom: 20px;
@@ -1004,7 +1030,7 @@ product-list-main .sidebar-main .components {
 }
 .product-detail-container .size-container .size-box .size {
   background: #fff;
-  padding: 4px 12px;
+  padding: 5px 10px;
   color: #000;
   min-width: 40px;
   display: inline-block;
@@ -1014,6 +1040,8 @@ product-list-main .sidebar-main .components {
   font-size: 14px;
   margin-right: 3px;
   cursor: pointer;
+  margin-bottom: 3px;
+  border-radius: 9px;
 }
 
 .add-to-cart-container{
@@ -1034,9 +1062,10 @@ product-list-main .sidebar-main .components {
   text-transform: uppercase;
   border-radius: 10px;
   font-size: 15px;
-  width: 62%;
-  max-width: 250px;
+  width: 80%;
+  max-width: 100%;
 }
+
 .add-to-wish-btns {
   padding: 10px;
   position: relative;
@@ -1123,32 +1152,47 @@ product-list-main .sidebar-main .components {
   /* justify-content: flex-start; */
   align-items: center;
   /* width: 82%; */
-  background-color: #d0cece;
+  background-color: #ECECEC;
   border-radius: 8px;
   margin-top: 20px;
-  padding: 8px;
+  padding: 6px;
 }
-.location svg{
-    width: 23px;
-margin: -7px 5px;
-cursor: pointer;
-}
+
 .location span {
-  padding-left: 10px;
-  cursor: pointer;
-  /* float: right; */
-  /* margin-right: 20px; */
+ 
   font-weight: 600;
 }
 .location input {
-border: none;
-background: #e8e8e8ed;
-padding: 6px;
-border-radius: 4px;
+  border: none;
+  background: #e8e8e8ed;
+  padding: 6px;
+  border-radius: 4px;
 }
 .location input:focus {
 outline: none;
 }
+
+.product-detail-container .slick-prev:before, .product-detail-container .slick-next:before {
+  color: #000000 !important;
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.container .slick-prev:before, .container .slick-next:before {
+  color: #000000 !important;
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
 @media (max-width: 767px) {
   .location {
     /* display: flex; */
