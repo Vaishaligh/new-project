@@ -7,9 +7,9 @@ Vue.use(VueRouter)
 
 
 const routes = [
-    { path: '/', component: ProductListPage },
-    { path: '/productdetailpage/:item_id', component: ProductDetailPage },
-  ]
+  { path: '/', component: ProductListPage },
+  { path: '/productdetailpage/:item_id', component: ProductDetailPage },
+]
   
  const router = new VueRouter ({
    routes

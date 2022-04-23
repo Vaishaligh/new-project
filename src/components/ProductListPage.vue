@@ -9,15 +9,15 @@
     <div class="top-header-strip-right">
       <ul>
         <li class="flegDrop">
-          <a href="#" class="toggle-icon pull-right"><img src="" /></a>
+          <a  class="toggle-icon pull-right"><img src="" /></a>
         </li>
         <li>
-          <a href="#">our stores</a>
+          <a >our stores</a>
         </li>
         <li>
-          <a href="#">my account</a>
+          <a >my account</a>
         </li>
-        <li><a href="#">blog </a></li>
+        <li><a >blog </a></li>
       </ul>
     </div>
   </div>
@@ -89,7 +89,7 @@
       <div class="top-logo-m">
         <a
           class="navbar-brand mobile-logo nuxt-link-exact-active nuxt-link-active"
-          href="#"
+          
         >
           <img
             src="../assets/mobile-logo.svg"
@@ -102,22 +102,22 @@
       <div class="top-icon">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" >
               <img src="../assets/selectCountry.png"
             /></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" >
               <img src="../assets/search.svg" alt="" title="" />
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" >
               <img src="../assets/wish.svg" alt="" title="" />
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" >
               <img src="../assets/cart.svg" alt="" title="" />
             </a>
           </li>
@@ -132,7 +132,7 @@
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
-              href="#"
+              
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -145,7 +145,7 @@
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
-              href="#"
+              
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -156,14 +156,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"
+            <a class="nav-link" 
               >Sale<span class="sr-only"></span></a
             >
           </li>
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
-              href="#"
+              
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -176,7 +176,7 @@
         </ul>
       </div>
       <div class="top-logo">
-        <a class="navbar-brand nuxt-link-active" href="#">
+        <a class="navbar-brand nuxt-link-active" >
           <img src="../assets/lgo.png" alt="Ahujasons" title="ahujasons" />
         </a>
       </div>
@@ -186,7 +186,7 @@
           <li class="nav-item dropdown">
             <a
               class="nav-link dropdown-toggle"
-              href="#"
+              
               id="navbarDropdown"
               role="button"
               data-toggle="dropdown"
@@ -197,7 +197,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#"
+            <a class="nav-link" 
               ><span class="sr-only"></span>CRAFTMANSHIP</a
             >
           </li>
@@ -207,17 +207,17 @@
       <div class="top-icon">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" >
               <img src="../assets/search.png" alt="" title="" />
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" >
               <img src="../assets/wishlist.png" alt="" title="" />
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" >
               <img src="../assets/cart.png" alt="" title="" />
             </a>
           </li>
@@ -263,7 +263,7 @@
               <ul class="m-0 p-0" style="">
                 <li v-for="data in selectedFilters" :key="data.label">
                   <span>{{data.filt.value}}</span>
-                  <a href="#" class="remove">
+                  <a  class="remove">
                     <i class="fa fa-close" @click="clearFilter(data.filt, data.label)"></i>
                   </a>
                 </li>
@@ -290,7 +290,7 @@
               <ul class="m-0 p-0" @click="clearAll">
                 <li style="margin-left: 20px;">
                   <span>Clear All</span>
-                  <a href="#" class="remove">
+                  <a  class="remove">
                     <i class="fa fa-close"></i>
                   </a>
                 </li>
@@ -347,15 +347,13 @@
                       :data-bs-target="'#' + filter.id"
                       aria-expanded="true"
                       :aria-controls="filter.id"
-                      v-on:click="
-                        filter.isOptionFilter = !filter.isOptionFilter
-                      "
+                      v-on:click.prevent="" 
                     >
                       {{ filter.filter_lable }}
                     </button>
                   </h2>
                   <div
-                    v-if="filter.isOptionFilter"
+                    
                     :id="filter.id"
                     class="accordion-collapse"
                     data-bs-parent="#filterAccordion"
@@ -596,38 +594,38 @@
             <div class="for-mobile-view" v-if="!isFooter1">
               <ul>
                 <li class="men">
-                  <a href="#">Men</a>
+                  <a >Men</a>
                 </li>
                 <li class="woman">
-                  <a href="#">Woman</a>
+                  <a >Woman</a>
                 </li>
                 <li class="home">
-                  <a href="#">Home</a>
+                  <a >Home</a>
                 </li>
                 <li class="sale">
-                  <a href="#">Sale</a>
+                  <a >Sale</a>
                 </li>
                 <li class="collection">
-                  <a href="#">Collection</a>
+                  <a >Collection</a>
                 </li>
               </ul>
             </div>
             <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
-                  <a href="#">Men</a>
+                  <a >Men</a>
                 </li>
                 <li class="woman">
-                  <a href="#">Woman</a>
+                  <a >Woman</a>
                 </li>
                 <li class="home">
-                  <a href="#">Home</a>
+                  <a >Home</a>
                 </li>
                 <li class="sale">
-                  <a href="#">Sale</a>
+                  <a >Sale</a>
                 </li>
                 <li class="collection">
-                  <a href="#">Collection</a>
+                  <a >Collection</a>
                 </li>
               </ul>
             </div>
@@ -637,44 +635,44 @@
             <div class="for-mobile-view" v-if="!isFooter2">
               <ul>
                 <li class="men">
-                  <a href="#">Ahujasons Export</a>
+                  <a >Ahujasons Export</a>
                 </li>
                 <li class="woman">
-                  <a href="#">Ahujasons Wholesale</a>
+                  <a >Ahujasons Wholesale</a>
                 </li>
                 <li class="our story">
-                  <a href="#">Our Story</a>
+                  <a >Our Story</a>
                 </li>
                 <li class="legacy">
-                  <a href="#">Legacy</a>
+                  <a >Legacy</a>
                 </li>
                 <li class="craftman ship">
-                  <a href="#">Craftsman ship </a>
+                  <a >Craftsman ship </a>
                 </li>
                 <li class="our store blogs">
-                  <a href="#">Our Store Blogs </a>
+                  <a >Our Store Blogs </a>
                 </li>
               </ul>
             </div>
             <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
-                  <a href="#">Ahujasons Export</a>
+                  <a >Ahujasons Export</a>
                 </li>
                 <li class="woman">
-                  <a href="#">Ahujasons Wholesale</a>
+                  <a >Ahujasons Wholesale</a>
                 </li>
                 <li class="our story">
-                  <a href="#">Our Story</a>
+                  <a >Our Story</a>
                 </li>
                 <li class="legacy">
-                  <a href="#">Legacy</a>
+                  <a >Legacy</a>
                 </li>
                 <li class="craftman ship">
-                  <a href="#">Craftsman ship </a>
+                  <a >Craftsman ship </a>
                 </li>
                 <li class="our store blogs">
-                  <a href="#">Our Store Blogs </a>
+                  <a >Our Store Blogs </a>
                 </li>
               </ul>
             </div>
@@ -686,38 +684,38 @@
             <div class="for-mobile-view" v-if="!isFooter3">
               <ul>
                 <li class="men">
-                  <a href="#">Terms and Condition </a>
+                  <a >Terms and Condition </a>
                 </li>
                 <li class="woman">
-                  <a href="#">Shipping & Delivery</a>
+                  <a >Shipping & Delivery</a>
                 </li>
                 <li class="home">
-                  <a href="#">Returns & Cancellation</a>
+                  <a >Returns & Cancellation</a>
                 </li>
                 <li class="sale">
-                  <a href="#">Contact us </a>
+                  <a >Contact us </a>
                 </li>
                 <li class="collection">
-                  <a href="#">Store appointment</a>
+                  <a >Store appointment</a>
                 </li>
               </ul>
             </div>
             <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
-                  <a href="#">Terms and Condition </a>
+                  <a >Terms and Condition </a>
                 </li>
                 <li class="woman">
-                  <a href="#">Shipping & Delivery</a>
+                  <a >Shipping & Delivery</a>
                 </li>
                 <li class="home">
-                  <a href="#">Returns & Cancellation</a>
+                  <a >Returns & Cancellation</a>
                 </li>
                 <li class="sale">
-                  <a href="#">Contact us </a>
+                  <a >Contact us </a>
                 </li>
                 <li class="collection">
-                  <a href="#">Store appointment</a>
+                  <a >Store appointment</a>
                 </li>
               </ul>
             </div>
@@ -727,38 +725,38 @@
             <div class="for-mobile-view" v-if="!isFooter4">
               <ul>
                 <li class="men">
-                  <a href="#">My Account </a>
+                  <a >My Account </a>
                 </li>
                 <li class="woman">
-                  <a href="#">Track Order</a>
+                  <a >Track Order</a>
                 </li>
                 <li class="home">
-                  <a href="#">My Cart</a>
+                  <a >My Cart</a>
                 </li>
                 <li class="sale">
-                  <a href="#">Wishlist </a>
+                  <a >Wishlist </a>
                 </li>
                 <li class="collection">
-                  <a href="#">Order History</a>
+                  <a >Order History</a>
                 </li>
               </ul>
             </div>
             <div class="for-dekhtop-view">
               <ul>
                 <li class="men">
-                  <a href="#">My Account </a>
+                  <a >My Account </a>
                 </li>
                 <li class="woman">
-                  <a href="#">Track Order</a>
+                  <a >Track Order</a>
                 </li>
                 <li class="home">
-                  <a href="#">My Cart</a>
+                  <a >My Cart</a>
                 </li>
                 <li class="sale">
-                  <a href="#">Wishlist </a>
+                  <a >Wishlist </a>
                 </li>
                 <li class="collection">
-                  <a href="#">Order History</a>
+                  <a >Order History</a>
                 </li>
               </ul>
             </div>
@@ -799,20 +797,20 @@
               <div class="socialIcons">
                 <h3>GIVE US A FOLLOW</h3>
                 <div class="socialIconsWrap">
-                  <a target="blank" href="#">
+                  <a target="blank" >
                     <img src="../assets/social.png" />
                   </a>
 
-                  <a target="blank" href="#">
+                  <a target="blank" >
                     <img src="../assets/linkedin.png" />
                   </a>
-                  <a target="blank" href="#">
+                  <a target="blank" >
                     <img src="../assets/twitter.png" />
                   </a>
-                  <a target="blank" href="#">
+                  <a target="blank" >
                     <img src="../assets/pinterest.png" />
                   </a>
-                  <a target="blank" href="#">
+                  <a target="blank" >
                     <img src="../assets/youtube.png" />
                   </a>
                 </div>
@@ -841,16 +839,18 @@ export default {
       filters: [],
       sort: [],
       isFilter: false,
-      isOptionFilter: true,
+      isOptionFilter: false,
       isFilterToggle: true,
       isFooter1: true,
       isFooter2: true,
       isFooter3: true,
       isFooter4: true,
       isHidden: false,
+      detailVisible: false,
       error_message: "",
       selectedFilters:[],
       pageNumber: 1,
+      count: 0,
       moreData: {
         page: 1,
         count: 20,
@@ -883,15 +883,15 @@ export default {
     },
 
     async apiCall(moreData) {
-    //  this.$router.push({
-    //        query: {
-    //         ...(moreData.page && {page: `${moreData.page}`}),
-    //         ...(moreData.count && {count: `${moreData.count}`}),
-    //         ...(moreData.sort_by && {sort_by: `${moreData.sort_by}`}),
-    //         ...(moreData.sort_dir && {sort_dir: `${moreData.sort_dir}`}),
-    //         ...(moreData.filter && {filter: `${moreData.filter}`}),
-    //       },
-    //   })
+     this.$router.push({
+           query: {
+            ...(moreData.page && {page: `${moreData.page}`}),
+            ...(moreData.count && {count: `${moreData.count}`}),
+            ...(moreData.sort_by && {sort_by: `${moreData.sort_by}`}),
+            ...(moreData.sort_dir && {sort_dir: `${moreData.sort_dir}`}),
+            ...(moreData.filter && {filter: `${moreData.filter}`}),
+          },
+      })
       this.loading = true;
       let resp = await axios.get(
         "https://pim.wforwoman.com/pim/pimresponse.php/?service=category&store=1&url_key=top-wear-kurtas",
@@ -989,7 +989,9 @@ export default {
           this.moreData.filter =
             last === ","
               ? this.moreData.filter.slice(0, -1)
-              : this.moreData.filter.slice(1, this.moreData.length);
+              : this.moreData.filter.slice(1, this.moreData.filter.length);
+        }else {
+            this.moreData.filter = this.moreData.filter.replaceAll(",,",",");
         }
         this.apiCall(this.moreData);        
       }

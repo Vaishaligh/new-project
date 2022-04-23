@@ -33,7 +33,7 @@ button:focus {
 body {
   font-family: "jost-regular";
   margin: 0 auto;
-  max-width: 1600px;
+  max-width: 98vw;
 }
 .top-header-strip {
   display: flex;
@@ -989,10 +989,7 @@ product-list-main .sidebar-main .components {
 }
   
 
-.color{
-  text-transform: uppercase;
-  padding-left: 20px;
-}
+
 
 .mrp-message {
   font-size: 12px;
@@ -1191,9 +1188,19 @@ outline: none;
   -moz-osx-font-smoothing: grayscale;
 }
 
-
+.share-img{
+  position: absolute;
+  right: 35vw;
+  margin: 2vh;
+  z-index: 1;
+}
 
 @media (max-width: 767px) {
+  .share-img {
+    right: 9vw;
+    bottom: -300px;
+    margin: 2vh;
+}
   .location {
     /* display: flex; */
   justify-content: flex-start;

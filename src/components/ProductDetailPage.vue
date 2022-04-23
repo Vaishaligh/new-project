@@ -9,15 +9,15 @@
       <div class="top-header-strip-right">
         <ul>
           <li class="flegDrop">
-            <a href="#" class="toggle-icon pull-right"><img src="" /></a>
+            <a  class="toggle-icon pull-right"><img src="" /></a>
           </li>
           <li>
-            <a href="#">our stores</a>
+            <a >our stores</a>
           </li>
           <li>
-            <a href="#">my account</a>
+            <a >my account</a>
           </li>
-          <li><a href="#">blog </a></li>
+          <li><a >blog </a></li>
         </ul>
       </div>
     </div>
@@ -89,7 +89,7 @@
         <div class="top-logo-m">
           <a
             class="navbar-brand mobile-logo nuxt-link-exact-active nuxt-link-active"
-            href="#"
+            
           >
             <img
               src="../assets/mobile-logo.svg"
@@ -102,22 +102,22 @@
         <div class="top-icon">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" >
                 <img src="../assets/selectCountry.png"
               /></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" >
                 <img src="../assets/search.svg" alt="" title="" />
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" >
                 <img src="../assets/wish.svg" alt="" title="" />
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" >
                 <img src="../assets/cart.svg" alt="" title="" />
               </a>
             </li>
@@ -132,7 +132,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -145,7 +145,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -156,12 +156,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Sale<span class="sr-only"></span></a>
+              <a class="nav-link" >Sale<span class="sr-only"></span></a>
             </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -174,7 +174,7 @@
           </ul>
         </div>
         <div class="top-logo">
-          <a class="navbar-brand nuxt-link-active" href="#">
+          <a class="navbar-brand nuxt-link-active" >
             <img src="../assets/lgo.png" alt="Ahujasons" title="ahujasons" />
           </a>
         </div>
@@ -184,7 +184,7 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href="#"
+                
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -195,7 +195,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"
+              <a class="nav-link" 
                 ><span class="sr-only"></span>CRAFTMANSHIP</a
               >
             </li>
@@ -205,17 +205,17 @@
         <div class="top-icon">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" >
                 <img src="../assets/search.png" alt="" title="" />
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" >
                 <img src="../assets/wishlist.png" alt="" title="" />
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
+              <a class="nav-link" >
                 <img src="../assets/cart.png" alt="" title="" />
               </a>
             </li>
@@ -242,9 +242,11 @@
         </nav>
       </div>
       <div class="container-fluid product-detail-container">
-        <img src="../assets/Share.svg"/>
+        
         <div class="row" v-if="productImages.length">
+          
           <div class="col-md-8 col-sm-12">
+            <img class="share-img" src="../assets/Share.svg"/>
             <VueSlickCarousel v-bind="settings">
               <!-- <div class="image-container"> -->
 
@@ -298,20 +300,20 @@
                   {{ productDescription }}
                 </p>
               </div>
-              <div class="color">
-                <ul style="padding:5px 0px">
-                  <li
-                    v-for="colorproduct in colorVarient"
-                    :key="colorproduct.id"
-                  >
-                   
-                      <img
-                        :src="colorproduct.image_url"
-                        style="height: 61px; width: 52px"
-                      />
-                  
-                  </li>
-                </ul>
+              <div class="product-color">
+             <div class="product-color">
+               <div class="product-info-color">
+                 <span>COLORS: </span>
+                 <span v-if="selectedColor" class="selected-color">{{selectedColor}}</span>
+               </div>
+             </div>
+              </div>
+              <div class="product-color-img">
+                <div class="single-color" v-for="color in colorVarient" :key="color.id">
+                  <div class="producr-info-color-img" @click="changeColor(color.color_name)">
+                    <img style="height:50px; width:71px" :src="color.image_url" alt="">
+                  </div>
+                </div>
               </div>
               <div class="size-container">
                 <div class="size-bg">
@@ -496,38 +498,38 @@
               <div class="for-mobile-view" v-if="!isFooter1">
                 <ul>
                   <li class="men">
-                    <a href="#">Men</a>
+                    <a >Men</a>
                   </li>
                   <li class="woman">
-                    <a href="#">Woman</a>
+                    <a >Woman</a>
                   </li>
                   <li class="home">
-                    <a href="#">Home</a>
+                    <a >Home</a>
                   </li>
                   <li class="sale">
-                    <a href="#">Sale</a>
+                    <a >Sale</a>
                   </li>
                   <li class="collection">
-                    <a href="#">Collection</a>
+                    <a >Collection</a>
                   </li>
                 </ul>
               </div>
               <div class="for-dekhtop-view">
                 <ul>
                   <li class="men">
-                    <a href="#">Men</a>
+                    <a >Men</a>
                   </li>
                   <li class="woman">
-                    <a href="#">Woman</a>
+                    <a >Woman</a>
                   </li>
                   <li class="home">
-                    <a href="#">Home</a>
+                    <a >Home</a>
                   </li>
                   <li class="sale">
-                    <a href="#">Sale</a>
+                    <a >Sale</a>
                   </li>
                   <li class="collection">
-                    <a href="#">Collection</a>
+                    <a >Collection</a>
                   </li>
                 </ul>
               </div>
@@ -537,44 +539,44 @@
               <div class="for-mobile-view" v-if="!isFooter2">
                 <ul>
                   <li class="men">
-                    <a href="#">Ahujasons Export</a>
+                    <a >Ahujasons Export</a>
                   </li>
                   <li class="woman">
-                    <a href="#">Ahujasons Wholesale</a>
+                    <a >Ahujasons Wholesale</a>
                   </li>
                   <li class="our story">
-                    <a href="#">Our Story</a>
+                    <a >Our Story</a>
                   </li>
                   <li class="legacy">
-                    <a href="#">Legacy</a>
+                    <a >Legacy</a>
                   </li>
                   <li class="craftman ship">
-                    <a href="#">Craftsman ship </a>
+                    <a >Craftsman ship </a>
                   </li>
                   <li class="our store blogs">
-                    <a href="#">Our Store Blogs </a>
+                    <a >Our Store Blogs </a>
                   </li>
                 </ul>
               </div>
               <div class="for-dekhtop-view">
                 <ul>
                   <li class="men">
-                    <a href="#">Ahujasons Export</a>
+                    <a >Ahujasons Export</a>
                   </li>
                   <li class="woman">
-                    <a href="#">Ahujasons Wholesale</a>
+                    <a >Ahujasons Wholesale</a>
                   </li>
                   <li class="our story">
-                    <a href="#">Our Story</a>
+                    <a >Our Story</a>
                   </li>
                   <li class="legacy">
-                    <a href="#">Legacy</a>
+                    <a >Legacy</a>
                   </li>
                   <li class="craftman ship">
-                    <a href="#">Craftsman ship </a>
+                    <a >Craftsman ship </a>
                   </li>
                   <li class="our store blogs">
-                    <a href="#">Our Store Blogs </a>
+                    <a >Our Store Blogs </a>
                   </li>
                 </ul>
               </div>
@@ -586,38 +588,38 @@
               <div class="for-mobile-view" v-if="!isFooter3">
                 <ul>
                   <li class="men">
-                    <a href="#">Terms and Condition </a>
+                    <a >Terms and Condition </a>
                   </li>
                   <li class="woman">
-                    <a href="#">Shipping & Delivery</a>
+                    <a >Shipping & Delivery</a>
                   </li>
                   <li class="home">
-                    <a href="#">Returns & Cancellation</a>
+                    <a >Returns & Cancellation</a>
                   </li>
                   <li class="sale">
-                    <a href="#">Contact us </a>
+                    <a >Contact us </a>
                   </li>
                   <li class="collection">
-                    <a href="#">Store appointment</a>
+                    <a >Store appointment</a>
                   </li>
                 </ul>
               </div>
               <div class="for-dekhtop-view">
                 <ul>
                   <li class="men">
-                    <a href="#">Terms and Condition </a>
+                    <a >Terms and Condition </a>
                   </li>
                   <li class="woman">
-                    <a href="#">Shipping & Delivery</a>
+                    <a >Shipping & Delivery</a>
                   </li>
                   <li class="home">
-                    <a href="#">Returns & Cancellation</a>
+                    <a >Returns & Cancellation</a>
                   </li>
                   <li class="sale">
-                    <a href="#">Contact us </a>
+                    <a >Contact us </a>
                   </li>
                   <li class="collection">
-                    <a href="#">Store appointment</a>
+                    <a >Store appointment</a>
                   </li>
                 </ul>
               </div>
@@ -627,38 +629,38 @@
               <div class="for-mobile-view" v-if="!isFooter4">
                 <ul>
                   <li class="men">
-                    <a href="#">My Account </a>
+                    <a >My Account </a>
                   </li>
                   <li class="woman">
-                    <a href="#">Track Order</a>
+                    <a >Track Order</a>
                   </li>
                   <li class="home">
-                    <a href="#">My Cart</a>
+                    <a >My Cart</a>
                   </li>
                   <li class="sale">
-                    <a href="#">Wishlist </a>
+                    <a >Wishlist </a>
                   </li>
                   <li class="collection">
-                    <a href="#">Order History</a>
+                    <a >Order History</a>
                   </li>
                 </ul>
               </div>
               <div class="for-dekhtop-view">
                 <ul>
                   <li class="men">
-                    <a href="#">My Account </a>
+                    <a >My Account </a>
                   </li>
                   <li class="woman">
-                    <a href="#">Track Order</a>
+                    <a >Track Order</a>
                   </li>
                   <li class="home">
-                    <a href="#">My Cart</a>
+                    <a >My Cart</a>
                   </li>
                   <li class="sale">
-                    <a href="#">Wishlist </a>
+                    <a >Wishlist </a>
                   </li>
                   <li class="collection">
-                    <a href="#">Order History</a>
+                    <a >Order History</a>
                   </li>
                 </ul>
               </div>
@@ -699,20 +701,20 @@
                 <div class="socialIcons">
                   <h3>GIVE US A FOLLOW</h3>
                   <div class="socialIconsWrap">
-                    <a target="blank" href="#">
+                    <a target="blank" >
                       <img src="../assets/social.png" />
                     </a>
 
-                    <a target="blank" href="#">
+                    <a target="blank" >
                       <img src="../assets/linkedin.png" />
                     </a>
-                    <a target="blank" href="#">
+                    <a target="blank" >
                       <img src="../assets/twitter.png" />
                     </a>
-                    <a target="blank" href="#">
+                    <a target="blank" >
                       <img src="../assets/pinterest.png" />
                     </a>
-                    <a target="blank" href="#">
+                    <a target="blank" >
                       <img src="../assets/youtube.png" />
                     </a>
                   </div>
@@ -745,6 +747,7 @@ export default {
     return {
       item_id: "",
       isFilterToggle: true,
+      detailVisible: false,
       isFooter1: true,
       isFooter2: true,
       isFooter3: true,
@@ -774,6 +777,7 @@ export default {
         slidesToScroll: 1,
         touchThreshold: 5,
       },
+      selectedColor: "",
       colorVarient: [
         {
           image_url:
@@ -834,6 +838,9 @@ export default {
     toggleButton() {
       this.detailVisible = !this.detailVisible;
     },
+    changeColor(color) {
+      this.selectedColor = color;
+    }
   },
 };
 </script>
