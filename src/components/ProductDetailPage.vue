@@ -242,6 +242,7 @@
         </nav>
       </div>
       <div class="container-fluid product-detail-container">
+        <img src="../assets/Share.svg"/>
         <div class="row" v-if="productImages.length">
           <div class="col-md-8 col-sm-12">
             <VueSlickCarousel v-bind="settings">
@@ -268,6 +269,8 @@
                 <li><img src="../assets/Star.svg" alt="" /></li>
                 <li><img src="../assets/Star.svg" alt="" /></li>
                 <li><img src="../assets/halfstar.svg" alt="" /></li>
+                <li><img src="../assets/(10).svg" alt="" /></li>
+                <li><img src="../assets/Arrow.svg" alt="" /></li>
               </ul>
 
               <div class="price">
@@ -278,10 +281,10 @@
                     style="margin-top: -6px; margin-right: 3px"
                   />{{ productSellingPrice }}</span
                 >
-                <span class="discount">{{ productDiscount }}% Off</span>
+                <span v-if="productDiscount!=0" class="discount">{{ productDiscount }}% Off</span>
 
-                <p class="mrp-message">
-                  MRP:<s style="margin-left: 5px"
+                <p v-if="productSellingPrice!=productPrice" class="mrp-message">
+                  MRP:<s  style="margin-left: 5px"
                     ><img
                       src="../assets/Rupees.svg"
                       alt=""
@@ -313,6 +316,7 @@
               <div class="size-container">
                 <div class="size-bg">
                   <label for="">Select Size</label>
+                  <label style="float:right"><a href=""><b>Size chart</b></a></label>
                   <div class="size-box">
                     <label
                       class="size select-one-size"
@@ -401,10 +405,10 @@
                     <a href="">{{ productSimilar.name }}</a>
                   </p>
                   <p class="card-text">
-                    <s>Rs.{{ productSimilar.price }}</s> Rs.{{
+                    <s v-if="productSimilar.price!=productSimilar.selling_price">Rs.{{ productSimilar.price }}</s> Rs.{{
                       productSimilar.selling_price
                     }}
-                    <span style="color: red"
+                    <span v-if="productSimilar.discount!=0" class="discount"
                       >{{ productSimilar.discount }}%</span
                     >
                   </p>
@@ -822,7 +826,7 @@ export default {
     openNav() {
       document.getElementById("mySidenav").style.width = "100%";
     },
-    
+
 
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";

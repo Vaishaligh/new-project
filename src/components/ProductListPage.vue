@@ -437,8 +437,8 @@
                       <div class="card-body">
                         <p class="card-title productname">{{ product.name }}</p>
                         <p class="card-text">
-                        <s>Rs.{{ product.price }}</s> Rs.{{product.selling_price }}
-                        <span style="color: red">{{ product.discount }}%</span>
+                        <s v-if="product.price!=product.selling_price">Rs.{{ product.price }}</s> Rs.{{product.selling_price }}
+                        <span v-if="product.discount!=0" style="color: red">{{ product.discount }}%</span>
                         </p>
                          <p class="card-text" style="color: green">
                           {{ product.stock_status }}
@@ -475,10 +475,10 @@
                         <p class="card-title productname">{{ product.name }}</p>
 
                         <p class="card-text">
-                          <s>Rs.{{ product.price }}</s> Rs.{{
+                          <s v-if="product.price!=product.selling_price">Rs.{{ product.price }}</s> Rs.{{
                             product.selling_price
                           }}
-                          <span style="color: red"
+                          <span v-if="product.discount!=0" style="color: red"
                             >{{ product.discount }}%</span
                           >
                         </p>
