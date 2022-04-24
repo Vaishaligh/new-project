@@ -1251,6 +1251,22 @@ outline: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+.wishlist {
+  z-index: 2;
+  position: absolute;
+  right: 4px;
+  font-size: 0;
+  display: block;
+  text-align: center;
+  border-radius: 30px;
+  opacity: 1;
+  color: #626262;
+  text-transform: uppercase;
+  text-decoration: none;
+  pointer-events: none;
+  transition: all 0.1s;
+  top: 8px;
+}
   .share-img {
     right: 9vw;
     bottom: -300px;
