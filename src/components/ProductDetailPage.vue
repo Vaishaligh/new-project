@@ -9,15 +9,15 @@
       <div class="top-header-strip-right">
         <ul>
           <li class="flegDrop">
-            <a  class="toggle-icon pull-right"><img src="" /></a>
+            <a class="toggle-icon pull-right"><img src="" /></a>
           </li>
           <li>
-            <a >our stores</a>
+            <a>our stores</a>
           </li>
           <li>
-            <a >my account</a>
+            <a>my account</a>
           </li>
-          <li><a >blog </a></li>
+          <li><a>blog </a></li>
         </ul>
       </div>
     </div>
@@ -89,7 +89,6 @@
         <div class="top-logo-m">
           <a
             class="navbar-brand mobile-logo nuxt-link-exact-active nuxt-link-active"
-            
           >
             <img
               src="../assets/mobile-logo.svg"
@@ -102,22 +101,20 @@
         <div class="top-icon">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" >
-                <img src="../assets/selectCountry.png"
-              /></a>
+              <a class="nav-link"> <img src="../assets/selectCountry.png" /></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link">
                 <img src="../assets/search.svg" alt="" title="" />
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link">
                 <img src="../assets/wish.svg" alt="" title="" />
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link">
                 <img src="../assets/cart.svg" alt="" title="" />
               </a>
             </li>
@@ -132,7 +129,6 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -145,7 +141,6 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -156,12 +151,11 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >Sale<span class="sr-only"></span></a>
+              <a class="nav-link">Sale<span class="sr-only"></span></a>
             </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -174,7 +168,7 @@
           </ul>
         </div>
         <div class="top-logo">
-          <a class="navbar-brand nuxt-link-active" >
+          <a class="navbar-brand nuxt-link-active">
             <img src="../assets/lgo.png" alt="Ahujasons" title="ahujasons" />
           </a>
         </div>
@@ -184,7 +178,6 @@
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                
                 id="navbarDropdown"
                 role="button"
                 data-toggle="dropdown"
@@ -195,9 +188,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" 
-                ><span class="sr-only"></span>CRAFTMANSHIP</a
-              >
+              <a class="nav-link"><span class="sr-only"></span>CRAFTMANSHIP</a>
             </li>
           </ul>
         </div>
@@ -205,17 +196,17 @@
         <div class="top-icon">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link">
                 <img src="../assets/search.png" alt="" title="" />
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link">
                 <img src="../assets/wishlist.png" alt="" title="" />
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link">
                 <img src="../assets/cart.png" alt="" title="" />
               </a>
             </li>
@@ -242,11 +233,9 @@
         </nav>
       </div>
       <div class="container-fluid product-detail-container">
-        
         <div class="row" v-if="productImages.length">
-          
           <div class="col-md-8 col-sm-12">
-            <img class="share-img" src="../assets/Share.svg"/>
+            <img class="share-img" src="../assets/Share.svg" />
             <VueSlickCarousel v-bind="settings">
               <!-- <div class="image-container"> -->
 
@@ -283,10 +272,15 @@
                     style="margin-top: -6px; margin-right: 3px"
                   />{{ productSellingPrice }}</span
                 >
-                <span v-if="productDiscount!=0" class="discount">{{ productDiscount }}% Off</span>
+                <span v-if="productDiscount != 0" class="discount"
+                  >{{ productDiscount }}% Off</span
+                >
 
-                <p v-if="productSellingPrice!=productPrice" class="mrp-message">
-                  MRP:<s  style="margin-left: 5px"
+                <p
+                  v-if="productSellingPrice != productPrice"
+                  class="mrp-message"
+                >
+                  MRP:<s style="margin-left: 5px"
                     ><img
                       src="../assets/Rupees.svg"
                       alt=""
@@ -300,32 +294,53 @@
                   {{ productDescription }}
                 </p>
               </div>
-              <div class="product-color">
-             <div class="product-color">
-               <div class="product-info-color">
-                 <span>COLORS: </span>
-                 <span v-if="selectedColor" class="selected-color">{{selectedColor}}</span>
-               </div>
-             </div>
-              </div>
-              <div class="product-color-img">
-                <div class="single-color" v-for="color in colorVarient" :key="color.id">
-                  <div class="producr-info-color-img" @click="changeColor(color.color_name)">
-                    <img style="height:50px; width:71px" :src="color.image_url" alt="">
+              <div class="color">
+                <div class="product-color">
+                  <div class="product-info-color">
+                    <span>COLORS: </span>
+                    <span v-if="selectedColor" class="selected-color">{{
+                      selectedColor
+                    }}</span>
+                  </div>
+                </div>
+
+                <div class="product-color-img">
+                  <div
+                    class="single-color"
+                    v-for="color in colorVarient"
+                    :key="color.id"
+                  >
+                    <div
+                      class="producr-info-color-img"
+                      @click="changeColor(color.color_name)"
+                    >
+                      <img
+                        style="height: 50px; width: 61px"
+                        :src="color.image_url"
+                        alt=""
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
               <div class="size-container">
                 <div class="size-bg">
-                  <label for="">Select Size</label>
-                  <label style="float:right"><a href=""><b>Size chart</b></a></label>
-                  <div class="size-box">
-                    <label
-                      class="size select-one-size"
-                      v-for="productSize in productSizes"
-                      :key="productSize.id"
-                      >{{ productSize.size }}</label
-                    >
+                  <label for="">Select Size: </label>
+                  <label v-if="selectedSize" class="">{{ selectedSize }}</label>
+                  <label style="float: right"
+                    ><a href=""><b>Size chart</b></a></label
+                  >
+                  <div style="display:flex">
+                  <div
+                    class="size-box"
+                    v-for="productSize in productSizes"
+                    :key="productSize.id"
+                    @click="changeSize(productSize.size)"
+                  >
+                    <label class="size select-one-size">{{
+                      productSize.size
+                    }}</label>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -407,10 +422,14 @@
                     <a href="">{{ productSimilar.name }}</a>
                   </p>
                   <p class="card-text">
-                    <s v-if="productSimilar.price!=productSimilar.selling_price">Rs.{{ productSimilar.price }}</s> Rs.{{
-                      productSimilar.selling_price
-                    }}
-                    <span v-if="productSimilar.discount!=0" class="discount"
+                    <s
+                      v-if="
+                        productSimilar.price != productSimilar.selling_price
+                      "
+                      >Rs.{{ productSimilar.price }}</s
+                    >
+                    Rs.{{ productSimilar.selling_price }}
+                    <span v-if="productSimilar.discount != 0" class="discount"
                       >{{ productSimilar.discount }}%</span
                     >
                   </p>
@@ -498,38 +517,38 @@
               <div class="for-mobile-view" v-if="!isFooter1">
                 <ul>
                   <li class="men">
-                    <a >Men</a>
+                    <a>Men</a>
                   </li>
                   <li class="woman">
-                    <a >Woman</a>
+                    <a>Woman</a>
                   </li>
                   <li class="home">
-                    <a >Home</a>
+                    <a>Home</a>
                   </li>
                   <li class="sale">
-                    <a >Sale</a>
+                    <a>Sale</a>
                   </li>
                   <li class="collection">
-                    <a >Collection</a>
+                    <a>Collection</a>
                   </li>
                 </ul>
               </div>
               <div class="for-dekhtop-view">
                 <ul>
                   <li class="men">
-                    <a >Men</a>
+                    <a>Men</a>
                   </li>
                   <li class="woman">
-                    <a >Woman</a>
+                    <a>Woman</a>
                   </li>
                   <li class="home">
-                    <a >Home</a>
+                    <a>Home</a>
                   </li>
                   <li class="sale">
-                    <a >Sale</a>
+                    <a>Sale</a>
                   </li>
                   <li class="collection">
-                    <a >Collection</a>
+                    <a>Collection</a>
                   </li>
                 </ul>
               </div>
@@ -539,44 +558,44 @@
               <div class="for-mobile-view" v-if="!isFooter2">
                 <ul>
                   <li class="men">
-                    <a >Ahujasons Export</a>
+                    <a>Ahujasons Export</a>
                   </li>
                   <li class="woman">
-                    <a >Ahujasons Wholesale</a>
+                    <a>Ahujasons Wholesale</a>
                   </li>
                   <li class="our story">
-                    <a >Our Story</a>
+                    <a>Our Story</a>
                   </li>
                   <li class="legacy">
-                    <a >Legacy</a>
+                    <a>Legacy</a>
                   </li>
                   <li class="craftman ship">
-                    <a >Craftsman ship </a>
+                    <a>Craftsman ship </a>
                   </li>
                   <li class="our store blogs">
-                    <a >Our Store Blogs </a>
+                    <a>Our Store Blogs </a>
                   </li>
                 </ul>
               </div>
               <div class="for-dekhtop-view">
                 <ul>
                   <li class="men">
-                    <a >Ahujasons Export</a>
+                    <a>Ahujasons Export</a>
                   </li>
                   <li class="woman">
-                    <a >Ahujasons Wholesale</a>
+                    <a>Ahujasons Wholesale</a>
                   </li>
                   <li class="our story">
-                    <a >Our Story</a>
+                    <a>Our Story</a>
                   </li>
                   <li class="legacy">
-                    <a >Legacy</a>
+                    <a>Legacy</a>
                   </li>
                   <li class="craftman ship">
-                    <a >Craftsman ship </a>
+                    <a>Craftsman ship </a>
                   </li>
                   <li class="our store blogs">
-                    <a >Our Store Blogs </a>
+                    <a>Our Store Blogs </a>
                   </li>
                 </ul>
               </div>
@@ -588,38 +607,38 @@
               <div class="for-mobile-view" v-if="!isFooter3">
                 <ul>
                   <li class="men">
-                    <a >Terms and Condition </a>
+                    <a>Terms and Condition </a>
                   </li>
                   <li class="woman">
-                    <a >Shipping & Delivery</a>
+                    <a>Shipping & Delivery</a>
                   </li>
                   <li class="home">
-                    <a >Returns & Cancellation</a>
+                    <a>Returns & Cancellation</a>
                   </li>
                   <li class="sale">
-                    <a >Contact us </a>
+                    <a>Contact us </a>
                   </li>
                   <li class="collection">
-                    <a >Store appointment</a>
+                    <a>Store appointment</a>
                   </li>
                 </ul>
               </div>
               <div class="for-dekhtop-view">
                 <ul>
                   <li class="men">
-                    <a >Terms and Condition </a>
+                    <a>Terms and Condition </a>
                   </li>
                   <li class="woman">
-                    <a >Shipping & Delivery</a>
+                    <a>Shipping & Delivery</a>
                   </li>
                   <li class="home">
-                    <a >Returns & Cancellation</a>
+                    <a>Returns & Cancellation</a>
                   </li>
                   <li class="sale">
-                    <a >Contact us </a>
+                    <a>Contact us </a>
                   </li>
                   <li class="collection">
-                    <a >Store appointment</a>
+                    <a>Store appointment</a>
                   </li>
                 </ul>
               </div>
@@ -629,38 +648,38 @@
               <div class="for-mobile-view" v-if="!isFooter4">
                 <ul>
                   <li class="men">
-                    <a >My Account </a>
+                    <a>My Account </a>
                   </li>
                   <li class="woman">
-                    <a >Track Order</a>
+                    <a>Track Order</a>
                   </li>
                   <li class="home">
-                    <a >My Cart</a>
+                    <a>My Cart</a>
                   </li>
                   <li class="sale">
-                    <a >Wishlist </a>
+                    <a>Wishlist </a>
                   </li>
                   <li class="collection">
-                    <a >Order History</a>
+                    <a>Order History</a>
                   </li>
                 </ul>
               </div>
               <div class="for-dekhtop-view">
                 <ul>
                   <li class="men">
-                    <a >My Account </a>
+                    <a>My Account </a>
                   </li>
                   <li class="woman">
-                    <a >Track Order</a>
+                    <a>Track Order</a>
                   </li>
                   <li class="home">
-                    <a >My Cart</a>
+                    <a>My Cart</a>
                   </li>
                   <li class="sale">
-                    <a >Wishlist </a>
+                    <a>Wishlist </a>
                   </li>
                   <li class="collection">
-                    <a >Order History</a>
+                    <a>Order History</a>
                   </li>
                 </ul>
               </div>
@@ -701,20 +720,20 @@
                 <div class="socialIcons">
                   <h3>GIVE US A FOLLOW</h3>
                   <div class="socialIconsWrap">
-                    <a target="blank" >
+                    <a target="blank">
                       <img src="../assets/social.png" />
                     </a>
 
-                    <a target="blank" >
+                    <a target="blank">
                       <img src="../assets/linkedin.png" />
                     </a>
-                    <a target="blank" >
+                    <a target="blank">
                       <img src="../assets/twitter.png" />
                     </a>
-                    <a target="blank" >
+                    <a target="blank">
                       <img src="../assets/pinterest.png" />
                     </a>
-                    <a target="blank" >
+                    <a target="blank">
                       <img src="../assets/youtube.png" />
                     </a>
                   </div>
@@ -778,6 +797,7 @@ export default {
         touchThreshold: 5,
       },
       selectedColor: "",
+      selectedSize: 0,
       colorVarient: [
         {
           image_url:
@@ -831,7 +851,6 @@ export default {
       document.getElementById("mySidenav").style.width = "100%";
     },
 
-
     closeNav() {
       document.getElementById("mySidenav").style.width = "0";
     },
@@ -840,7 +859,10 @@ export default {
     },
     changeColor(color) {
       this.selectedColor = color;
-    }
+    },
+    changeSize(productSize) {
+      this.selectedSize = productSize;
+    },
   },
 };
 </script>

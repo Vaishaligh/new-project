@@ -1194,7 +1194,24 @@ outline: none;
   margin: 2vh;
   z-index: 1;
 }
-
+.product-color-img {
+  display: flex;
+}
+.product-info-color-img {
+  display: flex;
+  width: 100%;
+}
+.product-info-color-img img{
+  cursor: pointer;
+  width: 100;
+}
+.single-color {
+ 
+  margin-right: 5px;
+}
+.color{
+  padding-left: 20px;
+}
 @media (max-width: 767px) {
   .share-img {
     right: 9vw;
