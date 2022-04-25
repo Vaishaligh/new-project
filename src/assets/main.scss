@@ -1234,6 +1234,12 @@ outline: none;
   .productDetail{
     padding: 20px 20px;
   }
+  .product-detail-container ul {
+    padding: 10px 20px;
+}
+  .page-star{
+    float: right;
+  }
  
 .product-detail-container .slick-dots li button:before {
     font-family: 'slick';
@@ -1301,7 +1307,7 @@ border-radius: 4px;
 .location input:focus {
 outline: none;
 }
-  .sidebar {
+.sidebar {
     position: fixed;
     top: 0;
     overflow: auto;
