@@ -347,7 +347,7 @@
                       :data-bs-target="'#' + filter.id"
                       aria-expanded="true"
                       :aria-controls="filter.id"
-                      v-on:click.prevent="" 
+                      
                     >
                       {{ filter.filter_lable }}
                     </button>
