@@ -347,6 +347,7 @@
                       :data-bs-target="'#' + filter.id"
                       aria-expanded="true"
                       :aria-controls="filter.id"
+                      @click="toggleCurrentFilter(index)"
                       
                     >
                       {{ filter.filter_lable }}
@@ -357,6 +358,7 @@
                     :id="filter.id"
                     class="accordion-collapse"
                     data-bs-parent="#filterAccordion"
+                    v-if="isOptionFilter==index"
                   >
                     <li
                       class="list-unstyled"
@@ -864,6 +866,13 @@ export default {
     this.apiCall(this.moreData);
   },
   methods: {    
+    toggleCurrentFilter(index){
+    if(this.isOptionFilter == index){
+      this.isOptionFilter = null;
+    }else{
+      this.isOptionFilter = index;
+    }
+    },
         getNumbers:function(start,stop){
             return new Array(stop-start).fill(start).map((n,i)=>n+i);
         },
