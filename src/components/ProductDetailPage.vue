@@ -289,19 +289,17 @@
                   >(inclusive all of taxes)
                 </p>
               </div>
-              <div style="padding-left: 20px">
+              <div class="short-desc">
                 <p class="short">
                   {{ productDescription }}
                 </p>
               </div>
               <div class="color">
                 <div class="product-color">
-                  
-                    <span>COLORS: </span>
-                    <span v-if="selectedColor" class="selected-color">{{
-                      selectedColor
-                    }}</span>
-             
+                  <span>COLORS: </span>
+                  <span v-if="selectedColor" class="selected-color">{{
+                    selectedColor
+                  }}</span>
                 </div>
 
                 <div class="product-color-img">
@@ -314,11 +312,7 @@
                       class="producr-info-color-img"
                       @click="changeColor(color.color_name)"
                     >
-                      <img
-                        style="height: 50px; "
-                        :src="color.image_url"
-                        alt=""
-                      />
+                      <img style="height: 50px" :src="color.image_url" alt="" />
                     </div>
                   </div>
                 </div>
@@ -328,17 +322,18 @@
                   <label for="">Select Size: </label>
                   <label v-if="selectedSize" class="">{{ selectedSize }}</label>
                   <label style="float: right"
-                    ><a href=""><b>Size chart</b></a></label
+                    ><a href=""
+                      ><b style="text-decoration: underline">Size chart</b></a
+                    ></label
                   >
-                  <div style="display:flex">
-                 
-                    <label class="size select-one-size"
-                     v-for="productSize in productSizes"
-                    :key="productSize.id"
-                    @click="changeSize(productSize.size)">{{
-                      productSize.size
-                    }}</label>
-             
+                  <div style="display: flex">
+                    <label
+                      class="size select-one-size"
+                      v-for="productSize in productSizes"
+                      :key="productSize.id"
+                      @click="changeSize(productSize.size)"
+                      >{{ productSize.size }}</label
+                    >
                   </div>
                 </div>
               </div>
@@ -358,29 +353,39 @@
                 </div>
               </div>
               <div class="other-info">
-             
-                <h3 v-on:click="isProductDetail = !isProductDetail">Product Details</h3>
-         
-                  <ul v-if="!isProductDetail">
-                    <li
-                      v-for="productDetail in productDetails"
-                      :key="productDetail.id"
-                    >
-                      <span>{{ productDetail.label }}</span
-                      >:
-                      <span>{{ productDetail.value }}</span>
-                    </li>
-                  </ul>
-            
-             
+                <h3 v-on:click="isProductDetail = !isProductDetail">
+                  Product Details
+                </h3>
+
+                <ul v-if="!isProductDetail">
+                  <li
+                    v-for="productDetail in productDetails"
+                    :key="productDetail.id"
+                  >
+                    <span>{{ productDetail.label }}</span
+                    >:
+                    <span>{{ productDetail.value }}</span>
+                  </li>
+                </ul>
               </div>
               <div class="other-info">
-             
-                <h3 style="padding-top: 20px" >Product Information</h3>
-         
-                
-            
-             
+                <h3
+                  v-on:click="isProductInformation = !isProductInformation"
+                  style="padding-top: 20px"
+                >
+                  Product Information
+                </h3>
+
+                <p v-if="!isProductInformation">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum
+                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+                  cupidatat non proident, sunt in culpa qui officia deserunt
+                  mollit anim id est laborum.
+                </p>
               </div>
               <div class="other-info down-other-info">
                 <div class="location">
@@ -401,7 +406,7 @@
           </div>
         </div>
       </div>
-      <div class="container mt-3">
+      <div class="container" style="margin-top: 5%;">
         <h4 class="font-medium mb-4" style="text-align: center">
           Similar Products
         </h4>
@@ -430,14 +435,15 @@
                     <a href="">{{ productSimilar.name }}</a>
                   </p>
                   <p class="card-text">
-                    <s
+                   
+                   <span class="selling-price-p"> Rs.{{ productSimilar.selling_price }}</span>
+                     <s 
                       v-if="
                         productSimilar.price != productSimilar.selling_price
                       "
                       >Rs.{{ productSimilar.price }}</s
                     >
-                    Rs.{{ productSimilar.selling_price }}
-                    <span v-if="productSimilar.discount != 0" class="discount"
+                    <span v-if="productSimilar.discount != 0" class="discount-p"
                       >{{ productSimilar.discount }}%</span
                     >
                   </p>
@@ -780,46 +786,33 @@ export default {
       isFooter3: true,
       isFooter4: true,
       isHidden: false,
-      isProductDetail:true,
+      isProductDetail: true,
+      isProductInformation: true,
       productImages: [],
       productSimilars: [],
       productSizes: [],
       productDetails: [],
       settings: {
         dots: true,
-
         focusOnSelect: true,
         infinite: true,
         speed: 500,
         slidesToShow: 2,
         slidesToScroll: 1,
         touchThreshold: 5,
-         "responsive": [
-    {
-      "breakpoint": 1024,
-      "settings": {
-        "slidesToShow": 2,
-        "slidesToScroll": 3,
-        "infinite": true,
-        "dots": true
-      }
-    },
-    {
-      "breakpoint": 600,
-      "settings": {
-        "slidesToShow": 1,
-        "slidesToScroll": 2,
-        "initialSlide": 2
-      }
-    },
-    {
-      "breakpoint": 480,
-      "settings": {
-        "slidesToShow": 1,
-        "slidesToScroll": 1
-      }
-    }
-  ]
+        responsive: [
+
+          {
+            breakpoint: 767,
+            settings: {
+               dots: false,
+              slidesToShow: 1.2,
+              slidesToScroll: 2,
+              initialSlide: 2,
+            },
+          },
+        
+        ],
       },
       settings1: {
         dots: true,
@@ -829,32 +822,18 @@ export default {
         slidesToShow: 4,
         slidesToScroll: 1,
         touchThreshold: 5,
-        "responsive": [
-    {
-      "breakpoint": 1024,
-      "settings": {
-        "slidesToShow": 3,
-        "slidesToScroll": 3,
-        "infinite": true,
-        "dots": true
-      }
-    },
-    {
-      "breakpoint": 600,
-      "settings": {
-        "slidesToShow": 2,
-        "slidesToScroll": 2,
-        "initialSlide": 2
-      }
-    },
-    {
-      "breakpoint": 480,
-      "settings": {
-        "slidesToShow": 1,
-        "slidesToScroll": 1
-      }
-    }
-  ]
+        responsive: [
+         
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2.3,
+              slidesToScroll: 2,
+              initialSlide: 2,
+            },
+          },
+         
+        ],
       },
       selectedColor: "",
       selectedSize: 0,
