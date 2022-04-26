@@ -950,30 +950,30 @@ product-list-main .sidebar-main .components {
   transition: all 0.5s;
 }
 .product-detail-container .page-title {
+  padding-left: 20px;
   /* padding: 10px 20px; */
   font-family: "Jost, Medium";
   /* margin-top: 0; */
-  margin-bottom: 0px;
+  /* margin-bottom: 0px; */
   line-height: 1;
   /* font-family: "Neue Helvetica, Roman"; */
-  padding: 10px 0px 0px 20px;
+  /* padding: 10px 0px 0px 20px; */
   font-size: 16px;
   color: #262626;
 }
 .page-star {
-  padding: 5px 20px;
+  display: flex;
+  padding: 0px 20px;
 }
 
 .product-detail-container ul li {
   padding-left: 3px;
   list-style: none;
-  float: left;
+  
 }
 .price {
   padding-left: 20px;
-  padding-top: 15px;
-  /* padding: 20px; */
-  /* padding-left: 20px; */
+
 }
 
 .short {
@@ -1002,13 +1002,13 @@ product-list-main .sidebar-main .components {
   font-size: 20px;
   color: red;
 }
-.product-detail-container .size-container {
+.product-detail-container .size-product {
   margin-bottom: 20px;
   float: left;
   width: 100%;
 }
 
-.product-detail-container .size-container label {
+.product-detail-container .size-product label {
   text-transform: uppercase;
   color: #000;
   font-size: 14px;
@@ -1017,11 +1017,11 @@ product-list-main .sidebar-main .components {
 .size-bg {
   padding-left: 20px;
 }
-.product-detail-container .size-container .size-box .size {
+.product-detail-container .size-product  .size {
   background: #fff;
   padding: 6px 12px;
   color: #000;
-  min-width: 40px;
+  
   display: inline-block;
   outline: none;
   border: 1px solid #ccc;
@@ -1034,7 +1034,7 @@ product-list-main .sidebar-main .components {
 }
 
 .add-to-cart-container {
-  padding: 20px;
+  padding: 20px 0px 20px 20px;
 }
 .add-to-cart-btns {
   border-bottom: 1px solid #ccc;
@@ -1067,10 +1067,12 @@ product-list-main .sidebar-main .components {
 }
 .product-detail-container .other-info {
   padding-left: 20px;
-  margin-top: 15px;
+
 }
 .product-detail-container .other-info h3 {
   font-size: 16px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
 }
 .product-detail-container .other-info ul {
   padding-left: 0;
@@ -1161,21 +1163,17 @@ product-list-main .sidebar-main .components {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.product-detail-container .slick-dots li button:before {
-  font-family: "slick";
-  font-size: 6px;
-  line-height: 20px;
+.product-detail-container .slick-dots{
+  justify-content: center;
   position: absolute;
-  top: 0;
-  left: 327px;
-  width: 20px;
-  height: 20px;
-  content: "•";
+  bottom: -25px;
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
   text-align: center;
-  opacity: 0.25;
-  color: black;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  display: flex;
 }
 
 .container .slick-prev:before,
@@ -1195,23 +1193,35 @@ product-list-main .sidebar-main .components {
   margin: 2vh;
   z-index: 1;
 }
+.product-color span{
+  color: #262626;
+    font-size: 12px;
+}
 .product-color-img {
   display: flex;
+  padding: 5px;
+  max-width: 10%;
 }
-.product-info-color-img {
-  display: flex;
-  width: 100%;
-}
-.product-info-color-img img {
-  cursor: pointer;
-  width: 100;
-}
+
 .single-color {
   margin-right: 5px;
 }
 .color {
   padding-left: 20px;
 }
+
+.product-detail-container .other-info h3:after {
+    flex-shrink: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-left: auto;
+    content: "";
+    background-image: url(/src/assets/plus.svg);
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+    transition: transform 0.2s ease-in-out;
+    float: right;
+  }
 @media (max-width: 767px) {
   .productDetail {
     padding: 20px 20px;
@@ -1471,6 +1481,7 @@ product-list-main .sidebar-main .components {
     font-size: 14px;
     margin-bottom: 0;
   }
+ 
   footer .footer_links h2:after {
     flex-shrink: 0;
     width: 1.25rem;
@@ -1526,6 +1537,7 @@ product-list-main .sidebar-main .components {
   .navbar-nav .nav-item {
     margin: 0 9px;
   }
+
 }
 @media screen and (max-width: 968px) {
   .footer-btm-center,

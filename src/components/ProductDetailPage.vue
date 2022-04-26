@@ -280,11 +280,11 @@
                   v-if="productSellingPrice != productPrice"
                   class="mrp-message"
                 >
-                  MRP:<s style="margin-left: 5px"
+                  MRP:<s style="margin: 5px"
                     ><img
                       src="../assets/Rupees.svg"
                       alt=""
-                      style="height: 11px"
+                      style="height: 10px"
                     />{{ productPrice }}</s
                   >(inclusive all of taxes)
                 </p>
@@ -296,12 +296,12 @@
               </div>
               <div class="color">
                 <div class="product-color">
-                  <div class="product-info-color">
+                  
                     <span>COLORS: </span>
                     <span v-if="selectedColor" class="selected-color">{{
                       selectedColor
                     }}</span>
-                  </div>
+             
                 </div>
 
                 <div class="product-color-img">
@@ -315,7 +315,7 @@
                       @click="changeColor(color.color_name)"
                     >
                       <img
-                        style="height: 50px; width: 61px"
+                        style="height: 50px; "
                         :src="color.image_url"
                         alt=""
                       />
@@ -323,7 +323,7 @@
                   </div>
                 </div>
               </div>
-              <div class="size-container">
+              <div class="size-product">
                 <div class="size-bg">
                   <label for="">Select Size: </label>
                   <label v-if="selectedSize" class="">{{ selectedSize }}</label>
@@ -331,16 +331,14 @@
                     ><a href=""><b>Size chart</b></a></label
                   >
                   <div style="display:flex">
-                  <div
-                    class="size-box"
-                    v-for="productSize in productSizes"
+                 
+                    <label class="size select-one-size"
+                     v-for="productSize in productSizes"
                     :key="productSize.id"
-                    @click="changeSize(productSize.size)"
-                  >
-                    <label class="size select-one-size">{{
+                    @click="changeSize(productSize.size)">{{
                       productSize.size
                     }}</label>
-                    </div>
+             
                   </div>
                 </div>
               </div>
@@ -360,9 +358,10 @@
                 </div>
               </div>
               <div class="other-info">
-                <h3>Product Details</h3>
-                <div>
-                  <ul>
+             
+                <h3 v-on:click="isProductDetail = !isProductDetail">Product Details</h3>
+         
+                  <ul v-if="!isProductDetail">
                     <li
                       v-for="productDetail in productDetails"
                       :key="productDetail.id"
@@ -372,7 +371,16 @@
                       <span>{{ productDetail.value }}</span>
                     </li>
                   </ul>
-                </div>
+            
+             
+              </div>
+              <div class="other-info">
+             
+                <h3 style="padding-top: 20px" >Product Information</h3>
+         
+                
+            
+             
               </div>
               <div class="other-info down-other-info">
                 <div class="location">
@@ -772,6 +780,7 @@ export default {
       isFooter3: true,
       isFooter4: true,
       isHidden: false,
+      isProductDetail:true,
       productImages: [],
       productSimilars: [],
       productSizes: [],
