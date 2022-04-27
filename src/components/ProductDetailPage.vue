@@ -290,9 +290,20 @@
                 </p>
               </div>
               <div class="short-desc">
-                <p class="short">
-                  {{ productDescription }}
-                </p>
+                  <p>VIP Club Member get an extra discount of Rs.60 and Free Shipping.<span v-if="readMore"></span>
+    <span v-else>...</span>
+  </p>
+
+  <p v-show="readMore">Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Turpis egestas pretium aenean pharetra magna ac
+    placerat. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Sed cras ornare arcu dui. Aliquam vestibulum
+    morbi blandit cursus. Adipiscing elit ut aliquam purus sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus nec. Ut etiam sit amet
+    nisl purus in mollis. Eu mi bibendum neque egestas congue quisque egestas diam in. Pellentesque adipiscing
+    commodo elit at imperdiet dui accumsan sit.
+  </p>
+  <button class="btn" @click="readMore =! readMore">
+    <span v-if="readMore">Read Less</span>
+    <span v-else>Read More</span>
+  </button>
               </div>
               <div class="color">
                 <div class="product-color">
@@ -302,6 +313,7 @@
                   }}</span>
                 </div>
 
+
                 <div class="product-color-img">
                   <div
                     class="single-color"
@@ -309,16 +321,18 @@
                     :key="color.id"
                   >
                     <div
-                      class="producr-info-color-img"
+                    :class="{'active' : selectedColor === color.color_name}"
+                      class="product-info-color-img"
                       @click="changeColor(color.color_name)"
+
                     >
-                      <img style="height: 50px" :src="color.image_url" alt="" />
+                      <img  style="height: 50px" :src="color.image_url" alt="" />
                     </div>
                   </div>
                 </div>
               </div>
               <div class="size-product">
-                <div class="size-bg">
+               
                   <label for="">Select Size: </label>
                   <label v-if="selectedSize" class="">{{ selectedSize }}</label>
                   <label style="float: right"
@@ -326,16 +340,18 @@
                       ><b style="text-decoration: underline">Size chart</b></a
                     ></label
                   >
-                  <div style="display: flex">
+                  <div class="product-size">
                     <label
-                      class="size select-one-size"
+                    
+                      class=""
                       v-for="productSize in productSizes"
                       :key="productSize.id"
                       @click="changeSize(productSize.size)"
-                      >{{ productSize.size }}</label
+                      >
+                      <span class="size" :class="{'active': selectedSize === productSize.size }">{{ productSize.size }}</span></label
                     >
                   </div>
-                </div>
+               
               </div>
               <div class="add-to-cart-container">
                 <div class="add-to-cart-btns fixed">
@@ -778,6 +794,7 @@ export default {
 
   data() {
     return {
+       readMore: false,
       item_id: "",
       isFilterToggle: true,
       detailVisible: false,
