@@ -35,7 +35,7 @@
           </button>
           <div
             id="mySidenav"
-            class="collapse navbar-collapse active"
+            class="collapse navbar-collapse"
             :class="isHidden ? 'active' : ''"
           >
             <div class="mobile-menu-container">
@@ -233,8 +233,8 @@
         </nav>
       </div>
       <div class="container-fluid product-detail-container">
-        <div class="row" v-if="productImages.length">
-          <div class="col-md-8 col-sm-12">
+        <div class="row m-0" v-if="productImages.length">
+          <div class="col-md-8 col-sm-12 p-0" style="position: relative">
             <img class="share-img" src="../assets/Share.svg" />
             <VueSlickCarousel v-bind="settings">
               <!-- <div class="image-container"> -->
@@ -290,20 +290,21 @@
                 </p>
               </div>
               <div class="short-desc">
-                  <p>VIP Club Member get an extra discount of Rs.60 and Free Shipping.<span v-if="readMore"></span>
-    <span v-else>...</span>
-  </p>
-
-  <p v-show="readMore">Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Turpis egestas pretium aenean pharetra magna ac
+                <div class="short">
+                  <p>VIP Club Member get an extra discount of Rs.60 and Free Shipping.<span v-if="readMore">Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Turpis egestas pretium aenean pharetra magna ac
     placerat. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Sed cras ornare arcu dui. Aliquam vestibulum
     morbi blandit cursus. Adipiscing elit ut aliquam purus sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus nec. Ut etiam sit amet
     nisl purus in mollis. Eu mi bibendum neque egestas congue quisque egestas diam in. Pellentesque adipiscing
-    commodo elit at imperdiet dui accumsan sit.
-  </p>
-  <button class="btn" @click="readMore =! readMore">
+    commodo elit at imperdiet dui accumsan sit.</span> <a href="javascript:void(0)" @click="readMore =! readMore">
     <span v-if="readMore">Read Less</span>
-    <span v-else>Read More</span>
-  </button>
+    <span v-else>Read More...</span>
+  </a>
+    
+ 
+  </p>
+
+  
+                </div>
               </div>
               <div class="color">
                 <div class="product-color">
@@ -333,7 +334,7 @@
               </div>
               <div class="size-product">
                
-                  <label for="">Select Size: </label>
+                  <label for="">Size: </label>
                   <label v-if="selectedSize" class="">{{ selectedSize }}</label>
                   <label style="float: right"
                     ><a href=""
@@ -847,6 +848,7 @@ export default {
               slidesToShow: 2.3,
               slidesToScroll: 2,
               initialSlide: 2,
+              arrow: false,
             },
           },
          
@@ -904,11 +906,13 @@ export default {
       this.productDetails = response.data.result.visible_attributes;
     },
     openNav() {
-      document.getElementById("mySidenav").style.width = "100%";
+      // document.getElementById("mySidenav").style.width = "100%";
+      this.isHidden = true;
     },
 
     closeNav() {
-      document.getElementById("mySidenav").style.width = "0";
+      // document.getElementById("mySidenav").style.width = "0";
+      this.isHidden = false;
     },
     toggleButton() {
       this.detailVisible = !this.detailVisible;
