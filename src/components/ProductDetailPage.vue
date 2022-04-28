@@ -235,7 +235,7 @@
       <div class="container-fluid product-detail-container">
         <div class="row m-0" v-if="productImages.length">
           <div class="col-md-8 col-sm-12 p-0" style="position: relative">
-            <img class="share-img" src="../assets/Share.svg" />
+           <a href="javascript:void(0)"> <img class="share-img" src="../assets/Share.svg" /></a>
             <VueSlickCarousel v-bind="settings">
               <!-- <div class="image-container"> -->
 
@@ -327,7 +327,7 @@
                       @click="changeColor(color.color_name)"
 
                     >
-                      <img  style="height: 50px" :src="color.image_url" alt="" />
+                      <img  style="height: 71px" :src="color.image_url" alt="" />
                     </div>
                   </div>
                 </div>
