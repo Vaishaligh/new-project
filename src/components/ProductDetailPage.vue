@@ -100,7 +100,7 @@
 
         <div class="top-icon">
           <ul class="navbar-nav">
-            <li class="nav-item">
+            <li class="nav-item country">
               <a class="nav-link"> <img src="../assets/selectCountry.png" /></a>
             </li>
             <li class="nav-item">
@@ -428,7 +428,7 @@
           Similar Products
         </h4>
 
-        <div class="row" v-if="productSimilars.length">
+        <div class="row product-image-section" v-if="productSimilars.length">
           <VueSlickCarousel v-bind="settings1">
             <div
               class="col-md-3 col-sm-6 col-xs-6 col-6 new-class"
@@ -846,9 +846,10 @@ export default {
             breakpoint: 767,
             settings: {
               slidesToShow: 2.3,
-              slidesToScroll: 2,
-              initialSlide: 2,
-              arrow: false,
+              slidesToScroll: 1,
+             
+              arrows: false,
+              infinite: false,
             },
           },
          
