@@ -389,6 +389,7 @@
                 <h3
                   v-on:click="isProductInformation = !isProductInformation"
                   style="padding-top: 20px"
+                  class="p-info"
                 >
                   Product Information
                 </h3>
