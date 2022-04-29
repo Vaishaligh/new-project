@@ -34,6 +34,7 @@
             <span class="navbar-toggler-icon"> </span>
           </button>
           <div
+           @click="closeNav()"
             id="mySidenav"
             class="collapse navbar-collapse"
             :class="isHidden ? 'active' : ''"
@@ -51,7 +52,7 @@
                 </div>
                 <ul id="login-hide" class="navbar-nav mobile-top-nav">
                   <li class="nav-item dropdown">
-                    <a style="width: 100%">Login </a>
+                    <a style="">Login </a>
                   </li>
                 </ul>
               </div>

@@ -906,7 +906,7 @@ product-list-main .sidebar-main .components {
   height: 10px;
   margin-left: auto;
   content: "";
-  background-image: url(/src/assets/cross-svgrepo-com.svg);
+
   background-repeat: no-repeat;
   background-size: 10px;
   transition: transform 0.2s ease-in-out;
@@ -1337,6 +1337,7 @@ product-list-main .sidebar-main .components {
   }
 
   .product-detail-container .size-product {
+    padding-right: 20px;
     border-bottom: 10px solid #F3F3F3 ;
     padding-bottom: 20px;
   }
@@ -1465,6 +1466,7 @@ product-list-main .sidebar-main .components {
 }
 
 .short {
+  padding-right: 20px;
   padding-left: 20px;
   color: #262626;
   font-size: 13px;
@@ -1494,7 +1496,7 @@ padding: 0px;
 
 
 .product-detail-container .other-info {
-  padding-left: 0px;
+  padding: 0px 20px;
 }
 .product-detail-container .other-info h3 {
   padding: 20px 20px;
@@ -1506,7 +1508,7 @@ padding: 0px;
     border-bottom: 10px solid #F3F3F3 ;
   }
   .product-detail-container ul {
-    padding: 10px 20px;
+    padding: 0px 20px;
   }
   .page-star {
     float: right;
@@ -2003,6 +2005,7 @@ padding: 0px;
   align-items: center;
   background-color: #fff;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+  justify-content: flex-start;
 }
 .card-text{
   font-size: 12px;
