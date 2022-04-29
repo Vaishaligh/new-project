@@ -848,7 +848,6 @@ export default {
             settings: {
               slidesToShow: 2.3,
               slidesToScroll: 1,
-             
               arrows: false,
               infinite: false,
             },

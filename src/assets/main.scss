@@ -1995,7 +1995,7 @@ padding: 0px;
   display: none;
 }
 .header {
-  justify-content: flex-start;
+  
   width: 100%;
   padding: 0px 8px 15px;
   position: relative;
@@ -2003,5 +2003,24 @@ padding: 0px;
   align-items: center;
   background-color: #fff;
   box-shadow: 0 4px 12px 0 rgb(0 0 0 / 5%);
+}
+.card-text{
+  font-size: 12px;
+}
+.card-title {
+  font-size: 12px;
+}
+.selling-price-p {
+  
+  font-size: 12px;
+  
+}
+.discount-p {
+ padding-left: 6px;
+  font-size: 12px;
+  
+}
+.card-text s {
+  padding-left: 3px;
 }
 }
