@@ -1499,7 +1499,7 @@ padding: 0px;
   padding: 0px 20px;
 }
 .product-detail-container .other-info h3 {
-  padding: 20px 20px;
+  padding: 20px 0px;
   border-bottom: 1px solid transparent;
   
 }
@@ -1605,7 +1605,7 @@ padding: 0px;
 
   .header .navbar-toggler {
     padding: 0.25rem 0.75rem;
-    font-size: 1 rem;
+    font-size: 1rem;
     line-height: 1;
     background-color: transparent;
     border: 1px solid transparent;
@@ -1977,6 +1977,12 @@ padding: 0px;
 
 @media screen and (max-width: 479px) {
 
+
+  
+
+.top-header-strip-left p {
+  font-size: 12px;
+}
   .navbar-brand > img {
     width: 80px !important;
     height: auto;
@@ -1997,7 +2003,6 @@ padding: 0px;
   display: none;
 }
 .header {
-  
   width: 100%;
   padding: 0px 8px 15px;
   position: relative;
@@ -2014,7 +2019,6 @@ padding: 0px;
   font-size: 12px;
 }
 .selling-price-p {
-  
   font-size: 12px;
   
 }
@@ -2025,5 +2029,16 @@ padding: 0px;
 }
 .card-text s {
   padding-left: 3px;
+}
+.humberger-menu{
+  flex: 0 0 15px;
+}
+.top-logo-m{
+  flex: 0 0 15px;
+}
+.top-icon {
+  flex: 0 0 calc(100% - 156px);
+  display: flex;
+  justify-content: flex-end;
 }
 }

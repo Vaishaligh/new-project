@@ -25,7 +25,7 @@
     <!--header start -->
     <div class="top-header for-mobile-view">
       <nav class="header navbar-light">
-        <div>
+        <div class="humberger-menu">
           <button
             type="button"
             class="navbar-toggler collapsed"
