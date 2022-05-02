@@ -31,6 +31,7 @@ button:focus {
   outline: none !important;
 }
 body {
+  padding-bottom: 40px;
   font-family: "jost-regular";
   margin: 0 auto;
   max-width: 1600px;
@@ -1314,6 +1315,7 @@ product-list-main .sidebar-main .components {
     float: right;
   }
   .product-size {
+    padding-top: 4px;
     flex-wrap: wrap;
     display: flex;
 }
