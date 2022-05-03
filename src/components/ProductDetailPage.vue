@@ -119,6 +119,7 @@
                       @click="changeColor(color.color_name)"
                     >
                       <img style="height: 71px" :src="color.image_url" alt="" />
+                      <span class="check-icon"></span>
                     </div>
                   </div>
                 </div>
