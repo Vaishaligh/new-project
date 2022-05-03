@@ -1,6 +1,6 @@
 <template>
   <div>
-  <TopHeader/>
+    <TopHeader />
 
     <!--product details section -->
     <div id="container">
@@ -20,7 +20,9 @@
       <div class="container-fluid product-detail-container">
         <div class="row m-0" v-if="productImages.length">
           <div class="col-md-8 col-sm-12 p-0" style="position: relative">
-           <a href="javascript:void(0)"> <img class="share-img" src="../assets/Share.svg" /></a>
+            <a href="javascript:void(0)">
+              <img class="share-img" src="../assets/Share.svg"
+            /></a>
             <VueSlickCarousel v-bind="settings">
               <!-- <div class="image-container"> -->
 
@@ -76,19 +78,25 @@
               </div>
               <div class="short-desc">
                 <div class="short">
-                  <p>VIP Club Member get an extra discount of Rs.60 and Free Shipping.<span v-if="readMore">Ligula ullamcorper malesuada proin libero nunc consequat interdum varius. Turpis egestas pretium aenean pharetra magna ac
-    placerat. Sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec. Sed cras ornare arcu dui. Aliquam vestibulum
-    morbi blandit cursus. Adipiscing elit ut aliquam purus sit amet. Aenean sed adipiscing diam donec adipiscing tristique risus nec. Ut etiam sit amet
-    nisl purus in mollis. Eu mi bibendum neque egestas congue quisque egestas diam in. Pellentesque adipiscing
-    commodo elit at imperdiet dui accumsan sit.</span> <a href="javascript:void(0)" @click="readMore =! readMore">
-    <span v-if="readMore">Read Less</span>
-    <span v-else>Read More...</span>
-  </a>
-    
- 
-  </p>
-
-  
+                  <p>
+                    VIP Club Member get an extra discount of Rs.60 and Free
+                    Shipping.<span v-if="readMore"
+                      >Ligula ullamcorper malesuada proin libero nunc consequat
+                      interdum varius. Turpis egestas pretium aenean pharetra
+                      magna ac placerat. Sed egestas egestas fringilla phasellus
+                      faucibus scelerisque eleifend donec. Sed cras ornare arcu
+                      dui. Aliquam vestibulum morbi blandit cursus. Adipiscing
+                      elit ut aliquam purus sit amet. Aenean sed adipiscing diam
+                      donec adipiscing tristique risus nec. Ut etiam sit amet
+                      nisl purus in mollis. Eu mi bibendum neque egestas congue
+                      quisque egestas diam in. Pellentesque adipiscing commodo
+                      elit at imperdiet dui accumsan sit.</span
+                    >
+                    <a href="javascript:void(0)" @click="readMore = !readMore">
+                      <span v-if="readMore">Read Less</span>
+                      <span v-else>Read More...</span>
+                    </a>
+                  </p>
                 </div>
               </div>
               <div class="color">
@@ -99,7 +107,6 @@
                   }}</span>
                 </div>
 
-
                 <div class="product-color-img">
                   <div
                     class="single-color"
@@ -107,37 +114,37 @@
                     :key="color.id"
                   >
                     <div
-                    :class="{'active' : selectedColor === color.color_name}"
+                      :class="{ active: selectedColor === color.color_name }"
                       class="product-info-color-img"
                       @click="changeColor(color.color_name)"
-
                     >
-                      <img  style="height: 71px" :src="color.image_url" alt="" />
+                      <img style="height: 71px" :src="color.image_url" alt="" />
                     </div>
                   </div>
                 </div>
               </div>
               <div class="size-product">
-               
-                  <label for="">Size: </label>
-                  <label v-if="selectedSize" class="">{{ selectedSize }}</label>
-                  <label style="float: right"
-                    ><a href=""
-                      ><b style="text-decoration: underline">Size chart</b></a
+                <label for="">Size: </label>
+                <label v-if="selectedSize" class="">{{ selectedSize }}</label>
+                <label style="float: right"
+                  ><a href=""
+                    ><b style="text-decoration: underline">Size chart</b></a
+                  ></label
+                >
+                <div class="product-size">
+                  <label
+                    class=""
+                    v-for="productSize in productSizes"
+                    :key="productSize.id"
+                    @click="changeSize(productSize.size)"
+                  >
+                    <span
+                      class="size"
+                      :class="{ active: selectedSize === productSize.size }"
+                      >{{ productSize.size }}</span
                     ></label
                   >
-                  <div class="product-size">
-                    <label
-                    
-                      class=""
-                      v-for="productSize in productSizes"
-                      :key="productSize.id"
-                      @click="changeSize(productSize.size)"
-                      >
-                      <span class="size" :class="{'active': selectedSize === productSize.size }">{{ productSize.size }}</span></label
-                    >
-                  </div>
-               
+                </div>
               </div>
               <div class="add-to-cart-container">
                 <div class="add-to-cart-btns fixed">
@@ -155,8 +162,10 @@
                 </div>
               </div>
               <div class="other-info">
-                <h3 v-on:click="isProductDetail = !isProductDetail"
-                :class="!isProductDetail ? 'openDetail' : ''">
+                <h3
+                  v-on:click="isProductDetail = !isProductDetail"
+                  :class="!isProductDetail ? 'openDetail' : ''"
+                >
                   Product Details
                 </h3>
 
@@ -199,10 +208,10 @@
                   <input
                     id="pin"
                     name=""
-                    type="tel"
-                    pattern="[0-9]*"
-                    maxlength="6"
+                    type="number"
                     placeholder="Enter pincode"
+                    max="999"
+                    onkeypress="if (this.value.length > 5) return false;"
                   />
                   <span>Change Pincode</span>
                 </div>
@@ -211,7 +220,7 @@
           </div>
         </div>
       </div>
-      <div class="container" style="margin-top: 5%;">
+      <div class="container" style="margin-top: 5%">
         <h4 class="font-medium mb-4" style="text-align: center">
           Similar Products
         </h4>
@@ -240,9 +249,10 @@
                     <a href="">{{ productSimilar.name }}</a>
                   </p>
                   <p class="card-text">
-                   
-                   <span class="selling-price-p"> Rs.{{ productSimilar.selling_price }}</span>
-                     <s 
+                    <span class="selling-price-p">
+                      Rs.{{ productSimilar.selling_price }}</span
+                    >
+                    <s
                       v-if="
                         productSimilar.price != productSimilar.selling_price
                       "
@@ -262,7 +272,7 @@
 
     <!--footer start -->
 
-   <FooterPage/>
+    <FooterPage />
     <!--footer end -->
   </div>
 </template>
@@ -273,23 +283,18 @@ import "vue-slick-carousel/dist/vue-slick-carousel.css";
 // optional style for arrows & dots
 import "vue-slick-carousel/dist/vue-slick-carousel-theme.css";
 import TopHeader from "./TopHeader.vue";
-import FooterPage from "./FooterPage.vue"
-
+import FooterPage from "./FooterPage.vue";
 
 export default {
   name: "ProductDetailPage",
 
-  components: { VueSlickCarousel ,
-                TopHeader,
-                FooterPage},
+  components: { VueSlickCarousel, TopHeader, FooterPage },
 
   data() {
     return {
-       readMore: false,
+      readMore: false,
       item_id: "",
-      
-     
-      
+
       isProductDetail: true,
       isProductInformation: true,
       productImages: [],
@@ -305,17 +310,15 @@ export default {
         slidesToScroll: 1,
         touchThreshold: 5,
         responsive: [
-
           {
             breakpoint: 767,
             settings: {
-               dots: false,
+              dots: false,
               slidesToShow: 1.2,
               slidesToScroll: 2,
               initialSlide: 2,
             },
           },
-        
         ],
       },
       settings1: {
@@ -327,7 +330,6 @@ export default {
         slidesToScroll: 1,
         touchThreshold: 5,
         responsive: [
-         
           {
             breakpoint: 767,
             settings: {
@@ -337,7 +339,6 @@ export default {
               infinite: false,
             },
           },
-         
         ],
       },
       selectedColor: "",
@@ -391,7 +392,7 @@ export default {
       this.productSizes = response.data.result.new_size_chart.result;
       this.productDetails = response.data.result.visible_attributes;
     },
-   
+
     changeColor(color) {
       this.selectedColor = color;
     },

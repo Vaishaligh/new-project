@@ -1293,7 +1293,7 @@ product-list-main .sidebar-main .components {
 .color {
   padding: 10px 20px;
 }
-.product-detail-container .other-info h3.openDetail:after{
+.product-detail-container .other-info h3.openDetail:after {
   background-image: url(/src/assets/minus.svg);
 }
 
@@ -1331,6 +1331,17 @@ product-list-main .sidebar-main .components {
 }
 .accordion-button.open::after {
   background-image: url(/src/assets/minus.svg);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
 @media (max-width: 767px) {
   .p-info {
