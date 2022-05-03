@@ -556,6 +556,7 @@ product-list-main .sidebar-main .components {
 }
 
 .customer_menu ul {
+  cursor: pointer;
   margin: 0;
   padding: 0;
 }
@@ -907,7 +908,7 @@ product-list-main .sidebar-main .components {
   height: 10px;
   margin-left: auto;
   content: "";
-
+background-image: url(/src/assets/cross-svgrepo-com.svg);
   background-repeat: no-repeat;
   background-size: 10px;
   transition: transform 0.2s ease-in-out;
@@ -1477,13 +1478,12 @@ product-list-main .sidebar-main .components {
   font-family: "jost-regular";
 }
 .share-img {
- top: auto;
+  top: auto;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  bottom: -16px;
+  right: 10px;
   z-index: 1;
   margin: 0;
-  
 }
 
 .size-bg {

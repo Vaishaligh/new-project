@@ -38,7 +38,7 @@
                 <li v-for="data in selectedFilters" :key="data.label">
                   <span>{{data.filt.value}}</span>
                   <a  class="remove">
-                    <i class="fa fa-close" @click="clearFilter(data.filt, data.label)"></i>
+                    <i class="fa fa-close" @click="clearFilter(data.filt,'example' )"></i>
                   </a>
                 </li>
               </ul>
@@ -147,6 +147,7 @@
                           @change="
                             filterProduct($event, option, filter.filter_lable)
                           "
+                          :checked="checkedFilters(option)"
                         /><span
                           >{{ option.value }} ({{ option.total }})</span
                         ></label
@@ -315,7 +316,7 @@ export default {
       loading: false,
       selected: "SORT BY",
       products: [],
-      filters: [],
+      filters:  [],
       sort: [],
       isFilter: false,
       isOptionFilter: false,
@@ -332,14 +333,38 @@ export default {
         count: 20,
         sort_by: "",
         sort_dir: "desc",
-        filter: "",
+        filter: this.$route.query.filter || "",
       },
     };
   },
   async mounted() {
     this.apiCall(this.moreData);
+    if(this.moreData.filter){let arr =this.moreData.filter.split(/-|,/);
+    arr.forEach((ele,index)=>{
+      if(index%2==0)
+      this.selectedFilters.push(
+        {filt:{value:arr[index+1],value_key:arr[index+1].toLowerCase(),code:ele}}
+      )
+    })}
+    if(this.selectedFilters.length !=0){
+      this.detailVisible =true;
+      this.isFilterToggle =false;
+    }
   },
   methods: {    
+    checkedFilters(key){
+       let x;
+      this.selectedFilters.forEach((ele)=>{
+        if(ele.filt.value_key==key.value_key)
+        {
+          x =  true;
+        }
+      });
+      if(x==true){
+        return true
+      }
+      else return false;
+    },
     toggleCurrentFilter(index){
     if(this.isOptionFilter == index){
       this.isOptionFilter = null;
@@ -350,9 +375,7 @@ export default {
         getNumbers:function(start,stop){
             return new Array(stop-start).fill(start).map((n,i)=>n+i);
         },
-    removeFilter() {
-
-    },
+    
     pageChange(index) {
       this.pageNumber = index;
       this.moreData.page = index;
@@ -366,13 +389,14 @@ export default {
     },
 
     async apiCall(moreData) {
+    
      this.$router.push({
            query: {
             ...(moreData.page && {page: `${moreData.page}`}),
             ...(moreData.count && {count: `${moreData.count}`}),
             ...(moreData.sort_by && {sort_by: `${moreData.sort_by}`}),
             ...(moreData.sort_dir && {sort_dir: `${moreData.sort_dir}`}),
-            ...(moreData.filter && {filter: `${moreData.filter}`}),
+            ...((moreData.filter) && {filter: `${moreData.filter}`}),
           },
       })
       this.loading = true;
@@ -384,7 +408,7 @@ export default {
             count: `${moreData.count}`,
             sort_by: `${moreData.sort_by}`,
             sort_dir: `${moreData.sort_dir}`,
-            filter: `${moreData.filter}`,
+            filter: `${moreData.filter }`,
           },
         }
       );
@@ -440,7 +464,7 @@ export default {
       if (heading === "Price" || heading === "Category") {
         newArr.value = newArr.value.replaceAll(" ", "+");
       }
-      if (checkbox.target.checked) {
+      if (checkbox?.target?.checked) {
         var comaSeparate = "";
         if (this.moreData.filter !== "") {
           comaSeparate = ",";
@@ -450,8 +474,10 @@ export default {
         console.log(this.moreData.filter);
         this.apiCall(this.moreData);
         var tempfilter = {
-          label: heading,
-          filt: filter
+         
+          filt: {value:filter.value,
+          value_key:filter.value_key,
+          code:filter.code}
         }
         this.selectedFilters.push(tempfilter);
       } else {
