@@ -155,7 +155,8 @@
                 </div>
               </div>
               <div class="other-info">
-                <h3 v-on:click="isProductDetail = !isProductDetail">
+                <h3 v-on:click="isProductDetail = !isProductDetail"
+                :class="!isProductDetail ? 'openDetail' : ''">
                   Product Details
                 </h3>
 
@@ -175,6 +176,7 @@
                   v-on:click="isProductInformation = !isProductInformation"
                   style="padding-top: 20px"
                   class="p-info"
+                  :class="!isProductInformation ? 'openDetail' : ''"
                 >
                   Product Information
                 </h3>

@@ -119,6 +119,7 @@
                     <h2 class="accordion-header">
                       <button
                         class="accordion-button collapsed noselect"
+                        :class="isOptionFilter == index? 'open' : ''"
                         type="button"
                         data-bs-toggle="collapse"
                         :data-bs-target="'#' + filter.id"

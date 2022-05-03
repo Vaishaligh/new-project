@@ -70,7 +70,8 @@
         <div class="footer-links-container">
           <div class="footer_links">
             <div class="customer_menu link_column home-links">
-              <h2 class="" v-on:click="isFooter1 = !isFooter1">Shop</h2>
+              <h2 class="" v-on:click="isFooter1 = !isFooter1"
+              :class="!isFooter1? 'openfooter' : ''">Shop</h2>
               <div class="for-mobile-view" v-if="!isFooter1">
                 <ul>
                   <li class="men">
@@ -111,7 +112,8 @@
               </div>
             </div>
             <div class="customer_menu link_column home-links">
-              <h2 class="" v-on:click="isFooter2 = !isFooter2">QUICK LINKS</h2>
+              <h2 class="" v-on:click="isFooter2 = !isFooter2"
+              :class="!isFooter2? 'openfooter' : ''">QUICK LINKS</h2>
               <div class="for-mobile-view" v-if="!isFooter2">
                 <ul>
                   <li class="men">
@@ -158,7 +160,8 @@
               </div>
             </div>
             <div class="customer_menu link_column home-links">
-              <h2 class="" v-on:click="isFooter3 = !isFooter3">
+              <h2 class="" v-on:click="isFooter3 = !isFooter3"
+              :class="!isFooter3? 'openfooter' : ''">
                 CUSTOMER SERVICE
               </h2>
               <div class="for-mobile-view" v-if="!isFooter3">
@@ -201,7 +204,8 @@
               </div>
             </div>
             <div class="customer_menu link_column home-links">
-              <h2 class="" v-on:click="isFooter4 = !isFooter4">MY PROFILE</h2>
+              <h2 class="" v-on:click="isFooter4 = !isFooter4"
+              :class="!isFooter4? 'openfooter' : ''">MY PROFILE</h2>
               <div class="for-mobile-view" v-if="!isFooter4">
                 <ul>
                   <li class="men">
